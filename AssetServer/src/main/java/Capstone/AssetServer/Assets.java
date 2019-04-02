@@ -4,8 +4,6 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 import javax.persistence.Id;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 
 
 @Entity
@@ -28,43 +26,43 @@ public class Assets {
     @Column(name="type")
     private String type;
 
-    Integer getID() {
+    public Integer getID() {
         return this.assetID;
     }
 
-    void setId(Integer id) {
+    public void setId(Integer id) {
         this.assetID = id;
     }
 
-    String getName() {
+    public String getName() {
         return this.name;
     }
 
-    void setName(String n) {
+    public void setName(String n) {
         this.name = n;
     }
 
-    String getCurator() {
+    public String getCurator() {
         return this.curator;
     }
 
-    void setCurator(String c) {
+    public void setCurator(String c) {
         this.curator = c;
     }
 
-    String getGenre() {
+    public String getGenre() {
         return this.genre;
     }
 
-    void setGenre(String g) {
+    public void setGenre(String g) {
         this.genre = g;
     }
 
-    String getType() {
+    public String getType() {
         return this.type;
     }
 
-    void setType(String t) {
+    public void setType(String t) {
         this.type = t;
     }
 
