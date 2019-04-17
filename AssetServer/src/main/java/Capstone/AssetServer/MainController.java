@@ -3,22 +3,26 @@ package Capstone.AssetServer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.Optional;
 
 
-@Controller // this means the class is a controller
-@RequestMapping(path="/api") // this is the path after the application path
+@RestController // this means the class is a controller
 public class MainController {
     @Autowired // this gets the bean called assetRepository
     private AssetsRepository assetsRepository;
 
     @Autowired
-    @RequestMapping(path="/all")
+    @GetMapping(path="/assets")
     public  @ResponseBody Iterable<Assets> getAllAssets() {
         return assetsRepository.findAll();
     }
 
+
+    @GetMapping(path="/assets/{id}")
+    public @ResponseBody
+    Optional<Assets> getAssetByID(@PathVariable Integer id) {
+        return assetsRepository.findById(id);
+    }
 }
