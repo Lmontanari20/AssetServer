@@ -26,6 +26,13 @@ public class Assets {
     @Column(name="type")
     private String type;
 
+    @Column(name="imageURL")
+    private String imageURL;
+
+    @Column(name="reserved")
+    private boolean reserved;
+
+
     public Integer getID() {
         return this.assetID;
     }
@@ -65,5 +72,13 @@ public class Assets {
     public void setType(String t) {
         this.type = t;
     }
+
+    public String getImageURL() { return this.imageURL; }
+
+    public void setImageURL(String i ) {this.imageURL = i;}
+
+    public boolean getReserved() {return this.reserved;}
+
+    public void setReserved(boolean r) {this.reserved = r;}
 
 }
